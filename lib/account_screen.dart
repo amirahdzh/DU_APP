@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:nq_app/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
@@ -10,6 +11,26 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
+  logout() async {
+    await FirebaseAuth.instance.signOut();
+    // prefs.setBool("isuserlogin", false);
+    prefs.remove("isuserlogin");
+    Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (BuildContext context) {
+      return const Login();
+    }), (route) => false);
+  }
+
+  late SharedPreferences prefs;
+
+  @override
+  void initState() {
+    super.initState();
+    SharedPreferences.getInstance().then((value) {
+      prefs = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -170,6 +191,22 @@ class _AccountScreenState extends State<AccountScreen> {
                       ),
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 25),
+                    child: Container(
+                      width: 60,
+                      height: 60,
+                      color: Color(0xffEC3137),
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.logout,
+                          size: 50,
+                          color: Colors.white,
+                        ),
+                        onPressed: () => logout(),
+                      ),
+                    ),
+                  )
                 ],
               ),
             ],

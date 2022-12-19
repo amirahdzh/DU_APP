@@ -1,6 +1,7 @@
 // import 'package:final_project/uifp/view/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:nq_app/home.dart';
 // import 'package:nq_app/account_screen.dart';
 import 'package:nq_app/home_screen.dart';
 // import 'package:nq_app/login.dart';
@@ -37,12 +38,6 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            color: Colors.black,
-            icon: const Icon(Icons.arrow_back)),
       ),
       body: SafeArea(
         // minimum: EdgeInsets.only(left: 10, right: 10),
@@ -198,16 +193,27 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                 ),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(right: 25, top: 15),
-                    child: Text("Need help?"),
+                    padding: const EdgeInsets.only(top: 0),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(
+                        "I Already Have an Account",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            decoration: TextDecoration.underline,
+                            color: Colors.black),
+                      ),
+                    ),
                   ),
                 ],
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 child: Material(
                   child: GestureDetector(
                     onTap: () async {
@@ -269,7 +275,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
 
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(builder: (BuildContext context) {
-          return const HomeScreen();
+          return const Home();
         }), (route) => false);
       }
       // ignore: empty_catches

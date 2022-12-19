@@ -13,26 +13,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  logout() async {
-    await FirebaseAuth.instance.signOut();
-    // prefs.setBool("isuserlogin", false);
-    prefs.remove("isuserlogin");
-    Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (BuildContext context) {
-      return const Login();
-    }), (route) => false);
-  }
-
-  late SharedPreferences prefs;
-
-  @override
-  void initState() {
-    super.initState();
-    SharedPreferences.getInstance().then((value) {
-      prefs = value;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,20 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.white,
               fontWeight: FontWeight.bold), //Color(0xff07a759)
         ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: IconButton(
-              onPressed: () {
-                logout();
-              },
-              icon: const Icon(
-                Icons.logout,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: SafeArea(
