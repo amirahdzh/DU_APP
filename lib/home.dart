@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:nq_app/account_screen.dart';
+import 'package:nq_app/api_example.dart';
 import 'package:nq_app/home_screen.dart';
+import 'package:nq_app/api_example.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -22,7 +24,7 @@ class _HomeState extends State<Home> {
 
   static const List<Widget> _pages = <Widget>[
     HomeScreen(),
-    HomeScreen(),
+    ApiExample(),
     AccountScreen(),
   ];
 
