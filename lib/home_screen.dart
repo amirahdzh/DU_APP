@@ -59,11 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: "News"),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account")
-      ]),
       body: SingleChildScrollView(
         child: SafeArea(
             child: Column(

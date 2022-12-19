@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:nq_app/account_screen.dart';
+import 'package:nq_app/home.dart';
 import 'package:nq_app/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:final_project/screen/Imageupload.dart';
@@ -39,7 +40,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
     if (userlogin) {
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (BuildContext context) {
-        return HomeScreen();
+        return Home();
       }), (route) => false);
     }
   }
@@ -385,7 +386,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
           prefs.setBool("isuserlogin", true);
           Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (BuildContext context) {
-            return const HomeScreen();
+            return const Home();
           }), (route) => false);
         } else {
           return showDialog(

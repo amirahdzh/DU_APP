@@ -28,11 +28,6 @@ class _AccountScreenState extends State<AccountScreen> {
         //   )
         // ],
       ),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: "News"),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account")
-      ]),
       body: SafeArea(
           child: Column(
         children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:nq_app/home.dart';
 import 'package:nq_app/home_screen.dart';
 import 'package:nq_app/login.dart';
 
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Future.delayed(Duration(seconds: 3)).then((value) {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (ctx) => HomeScreen()));
+          .pushReplacement(MaterialPageRoute(builder: (ctx) => Login()));
     });
   }
 
