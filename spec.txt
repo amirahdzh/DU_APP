@@ -1,0 +1,7 @@
+To do list :
+- UI splash screen
+- UI login screen
+- UI register
+- Auth firebase
+- UI About me
+- UI Home

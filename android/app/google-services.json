@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "188135450830",
+    "project_id": "daarulummahaat-app",
+    "storage_bucket": "daarulummahaat-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188135450830:android:acbfcdf690768497f3089f",
+        "android_client_info": {
+          "package_name": "com.example.nq_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188135450830-sslp4oggjhcam20jancai2kgs5h0n7qu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6yx3N_NbB3TKGF0xod7hDjLeyKDKnqKg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188135450830-sslp4oggjhcam20jancai2kgs5h0n7qu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
