@@ -98,17 +98,14 @@ class _AccountScreenState extends State<AccountScreen> {
                           width: 40,
                         ),
                         Container(
-                          alignment: Alignment.topRight,
-                          child: Icon(
-                            Icons.edit,
-                            color: Colors.white,
-                          ),
-                          // decoration: BoxDecoration(
-                          //     borderRadius: BorderRadius.circular(15),
-                          //     border: Border.all(
-                          //         color: Colors.white,
-                          //         style: BorderStyle.solid)),
-                        ),
+                            alignment: Alignment.topRight,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.edit,
+                                color: Colors.white,
+                              ),
+                            )),
                       ],
                     ),
                   ),
