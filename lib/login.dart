@@ -105,7 +105,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                               hintText: 'Email Address',
                               hintStyle: TextStyle(
                                 color: Color(0xFF848383),
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w300,
                               ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
@@ -219,8 +219,8 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(right: 25, top: 15),
-                      child: Text("Need help?"),
+                      padding: const EdgeInsets.only(right: 30, top: 15),
+                      child: Text("Reset password"),
                     ),
                   ],
                 ),
@@ -342,14 +342,21 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Icon(
-                        Icons.facebook,
-                        size: 60,
-                        color: Color(0xff3c5a99),
+                    Container(
+                      width: 300,
+                      height: 80,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Container(
+                              // decoration: BoxDecoration(color: Colors.blue),
+                              child: Image.network(
+                                  'http://pngimg.com/uploads/google/google_PNG19635.png',
+                                  fit: BoxFit.cover)),
+                        ],
                       ),
-                    ),
+                    )
                   ],
                 )
               ],
