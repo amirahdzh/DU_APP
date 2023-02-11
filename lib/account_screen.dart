@@ -11,6 +11,8 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
+  final user = FirebaseAuth.instance.currentUser!;
+
   logout() async {
     await FirebaseAuth.instance.signOut();
     // prefs.setBool("isuserlogin", false);
@@ -89,7 +91,7 @@ class _AccountScreenState extends State<AccountScreen> {
                                   fontSize: 20, fontWeight: FontWeight.w300),
                               children: <TextSpan>[
                                 TextSpan(
-                                    text: 'Amirah Dz H',
+                                    text: user.email,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold))
                               ]),
