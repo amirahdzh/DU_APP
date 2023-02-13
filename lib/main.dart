@@ -1,10 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-// import 'package:nq_app/api_example.dart';
-// import 'package:nq_app/home.dart';
-// import 'package:nq_app/login.dart';
-import 'package:nq_app/splash_screen.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:nq_app/src/features/authentication/screens/splash_screen/splash_screen.dart';
+import 'package:nq_app/src/utils/theme/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,12 +16,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'NQ App',
-      theme: ThemeData(
-          primarySwatch: Colors.green,
-          textTheme:
-              GoogleFonts.montserratTextTheme(Theme.of(context).textTheme)),
+    return GetMaterialApp(
+      title: 'DU App',
+      theme: DuAppTheme.lightTheme,
       home: SplashScreen(),
     );
   }

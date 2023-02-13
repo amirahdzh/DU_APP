@@ -63,17 +63,19 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // logo
-                Icon(Icons.house, size: 100, color: Color(0xffec3137)),
+                Icon(Icons.person, size: 100, color: Colors.green),
                 // App Name
                 Text(
-                  "NQ APP",
+                  "DU APP",
                   style: TextStyle(
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.bold,
                       fontSize: 42,
-                      color: Color(0xff07a759)),
+                      color: Colors.black),
                 ),
+                SizedBox(height: 10,),
+                Text("Sign to continue", style: TextStyle(color: Colors.grey),),
                 SizedBox(
-                  height: 30,
+                  height: 50,
                 ),
                 // Email text field
                 Padding(

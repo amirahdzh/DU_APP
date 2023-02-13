@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nq_app/home.dart';
 // import 'package:nq_app/account_screen.dart';
-import 'package:nq_app/login.dart';
+import 'package:nq_app/src/features/authentication/screens/login/login_screen.dart';
 // import 'package:nq_app/login.dart';
 // import 'imageupload.dart';
 
@@ -24,9 +24,9 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
   bool passwordConfirmVisibility = false;
 
   bool passwordConfirmed() {
-    if(_passwordController.text == _confirmPasswordController){
+    if (_passwordController.text == _confirmPasswordController) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
@@ -52,21 +52,29 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // logo
-                Icon(Icons.house, size: 100, color: Color(0xffec3137)),
+                Icon(Icons.person, size: 100, color: Colors.green),
                 // App Name
                 Text(
-                  "NQ APP",
+                  "DU APP",
                   style: TextStyle(
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.bold,
                       fontSize: 42,
-                      color: Color(0xff07a759)),
+                      color: Colors.black),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 10,
+                ),
+                Text(
+                  "Create a new account",
+                  style: TextStyle(color: Colors.grey),
+                ),
+                SizedBox(
+                  height: 50,
                 ),
                 // Email text field
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 0),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25.0, vertical: 0),
                   child: TextField(
                     controller: _emailController,
                     decoration: InputDecoration(
@@ -85,12 +93,13 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
 
                 // Password text field
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 25.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
                     controller: _passwordController,
                     obscureText: !passwordVisibility,
@@ -122,12 +131,13 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
 
                 // COnfirmation password text field
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 25.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
                     controller: _confirmPasswordController,
                     obscureText: !passwordConfirmVisibility,
@@ -144,7 +154,8 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                       prefixIcon: Icon(Icons.lock),
                       suffixIcon: GestureDetector(
                         onTap: () => setState(
-                          () => passwordConfirmVisibility = !passwordConfirmVisibility,
+                          () => passwordConfirmVisibility =
+                              !passwordConfirmVisibility,
                         ),
                         child: Icon(
                           passwordConfirmVisibility
@@ -159,7 +170,9 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
 
                 // Login button
                 Padding(
@@ -197,7 +210,8 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                     ),
                     GestureDetector(
                       onTap: () async {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
                           return const Login();
                         }));
                       },
@@ -235,14 +249,15 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                 title: Text("Password length should be minimum 6"),
               );
             });
-      } else if (!passwordConfirmed()){
-        return showDialog(context: context, builder: (BuildContext context){
-          return const AlertDialog(
-            title: Text("Password is not same!"),
-          );
-        });
-      } 
-      else {
+      } else if (!passwordConfirmed()) {
+        return showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return const AlertDialog(
+                title: Text("Password is not same!"),
+              );
+            });
+      } else {
         final user = await FirebaseAuth.instance.createUserWithEmailAndPassword(
             email: _emailController.text, password: _passwordController.text);
         final currentUser = FirebaseAuth.instance.currentUser;
