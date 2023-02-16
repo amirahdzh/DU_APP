@@ -1,9 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:nq_app/home.dart';
-import 'package:nq_app/register.dart';
+import 'package:nq_app/src/features/authentication/screens/register/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:nq_app/forgot_password_page.dart';
+import 'package:nq_app/src/features/authentication/screens/forgot_password/forgot_password_page.dart';
+
+import '../../../../constants/colors.dart';
+import '../../../../constants/text_strings.dart';
 
 // import 'CarouselScreen.dart';
 
@@ -63,7 +67,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // logo
-                Icon(Icons.person, size: 100, color: Colors.green),
+                Icon(Icons.person, size: 100, color: duPrimaryColor),
                 // App Name
                 Text(
                   "DU APP",
@@ -89,7 +93,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.green),
+                        borderSide: BorderSide(color: duPrimaryColor),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       hintText: 'Email Address',
@@ -115,7 +119,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.green),
+                        borderSide: BorderSide(color: duPrimaryColor),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       hintText: 'Password',
@@ -145,12 +149,7 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return ForgotPasswordPage();
-                        }));
-                      },
+                      onTap: () => Get.to(()=> ForgotPasswordPage()),
                       child: Padding(
                         padding: const EdgeInsets.only(right: 30),
                         child: Text(
@@ -173,11 +172,11 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                     child: Container(
                       padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                          color: Colors.green,
+                          color: duPrimaryColor,
                           borderRadius: BorderRadius.circular(10)),
                       child: Center(
                         child: Text(
-                          'Sign In',
+                          duLogin.toUpperCase(),
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -263,14 +262,9 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     GestureDetector(
-                      onTap: () async {
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (BuildContext context) {
-                          return const Signup();
-                        }));
-                      },
+                      onTap: () async => Get.to(()=>Signup()),
                       child: Text(
-                        'Register now',
+                        ' Register now',
                         style: TextStyle(
                             color: Colors.blue, fontWeight: FontWeight.bold),
                       ),

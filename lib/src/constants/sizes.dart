@@ -1,2 +1,3 @@
 // App default size
-const duDefaultSize = 30.0;
+const duSplashSize = 180.0;
+const duPaddingSize = 30.0;

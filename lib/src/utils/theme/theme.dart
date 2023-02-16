@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nq_app/src/utils/theme/widget_themes/elevated_button_theme.dart';
+import 'package:nq_app/src/utils/theme/widget_themes/outlined_button_theme.dart';
 // import 'package:nq_app/src/utils/theme/widget_themes/swatch_theme.dart';
 import 'package:nq_app/src/utils/theme/widget_themes/text_theme.dart';
 
@@ -13,8 +15,8 @@ class DuAppTheme{
     primarySwatch: Colors.green,
     textTheme: DuTextTheme.lightTextTheme,
     brightness: Brightness.light,
-    // primarySwatch: DuSwatchTheme.lightSwatch,
-    elevatedButtonTheme: ElevatedButtonThemeData(style: ElevatedButton.styleFrom())
+    outlinedButtonTheme: DuOutlinedButtonTheme.lightOutlinedButtonTheme,
+    elevatedButtonTheme: DuElevatedButtonTheme.lightElevatedButtonTheme,
   );
   static ThemeData darkTheme = ThemeData(
     /* DEVELOPED SOON */

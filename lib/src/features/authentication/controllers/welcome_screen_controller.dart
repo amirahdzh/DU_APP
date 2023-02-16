@@ -4,8 +4,8 @@ import 'package:nq_app/src/features/authentication/screens/login/login_screen.da
 
 import '../screens/welcome_screen/welcome_screen.dart';
 
-class SplashScreenController extends GetxController{
-  static SplashScreenController get find => Get.find();
+class WelcomeScreenController extends GetxController{
+  static WelcomeScreenController get find => Get.find();
   RxBool animate = false.obs;
 
   Future startAnimation() async {

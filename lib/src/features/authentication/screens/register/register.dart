@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:nq_app/home.dart';
 // import 'package:nq_app/account_screen.dart';
 import 'package:nq_app/src/features/authentication/screens/login/login_screen.dart';
+
+import '../../../../constants/colors.dart';
 // import 'package:nq_app/login.dart';
 // import 'imageupload.dart';
 
@@ -52,7 +54,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // logo
-                Icon(Icons.person, size: 100, color: Colors.green),
+                Icon(Icons.person, size: 100, color: duPrimaryColor),
                 // App Name
                 Text(
                   "DU APP",
@@ -83,7 +85,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.green),
+                        borderSide: BorderSide(color: duPrimaryColor),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       hintText: 'Email Address',
@@ -109,7 +111,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.green),
+                        borderSide: BorderSide(color: duPrimaryColor),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       hintText: 'Password',
@@ -147,7 +149,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.green),
+                        borderSide: BorderSide(color: duPrimaryColor),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       hintText: 'Confirm Password',
@@ -185,7 +187,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                     child: Container(
                       padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                          color: Colors.green,
+                          color: duPrimaryColor,
                           borderRadius: BorderRadius.circular(10)),
                       child: Center(
                         child: Text(
